@@ -33,5 +33,11 @@ export default Contacts;
 Contacts.propTypes = {
   handleDelete: propTypes.func.isRequired,
   filter: propTypes.string,
-  contacts: propTypes.array.isRequired,
+  contacts: propTypes.arrayOf(
+    propTypes.shape({
+      id: propTypes.string.isRequired,
+      name: propTypes.string.isRequired,
+      number: propTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
 };
